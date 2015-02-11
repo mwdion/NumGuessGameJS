@@ -6,3 +6,10 @@ Then the app should prompt the user to guess the number it is thinking of.
 
 And with each guess instruct the user if their guess is lower or higher until
 the user gets the number, then present them with how many times it took them to guess the number.
+
+To Play Game:
+npm install http-server -g
+npm install bower -g
+bower install
+http-server
+Open http://localhost:8080
