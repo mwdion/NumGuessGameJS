@@ -14,7 +14,11 @@ do {
   guessCount += 1;
   if (parseInt(guess) === randomNumber) {
     correctGuess = true;
-  }  
+    }else if(parseInt(guess) > randomNumber){
+      document.write('<h1>GUESS LOWER!<h1>');
+    }else if(parseInt(guess) < randomNumber){
+      document.write('<h1>GUESS HIGHER!<h1>');
+    } 
 } while ( ! correctGuess )
   
 document.write('<h1>You guessed the number!</h1>');
