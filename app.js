@@ -1,4 +1,5 @@
-var upper = prompt("What is your upper limit number?")
+// var startButton = document.getElementsByTagName("button")[0]; //start button
+var upper = prompt("What is your upper limit number?");
 var randomNumber = getRandomNumber(upper);
 var guess;
 var guessCount = 0;
@@ -9,17 +10,19 @@ function getRandomNumber( upper ) {
   return num;
 }
 
-do {
-  guess = prompt('I am thinking of a number between 1 and ' + upper + '. What is it?');
-  guessCount += 1;
-  if (parseInt(guess) === randomNumber) {
-    correctGuess = true;
-    }else if(parseInt(guess) > randomNumber){
-      document.write('<p>GUESS LOWER!<p>');
-    }else if(parseInt(guess) < randomNumber){
-      document.write('<p>GUESS HIGHER!<p>');
-    } 
-} while ( ! correctGuess )
+  do {
+    guess = prompt('I am thinking of a number between 1 and ' + upper + '. What is it?');
+    guessCount += 1;
+    if (parseInt(guess) === randomNumber) {
+      correctGuess = true;
+      }else if(parseInt(guess) > randomNumber){
+        document.write('<p>GUESS LOWER!<p>');
+      }else if(parseInt(guess) < randomNumber){
+        document.write('<p>GUESS HIGHER!<p>');
+      } 
+  } while ( ! correctGuess );
+// startButton.onclick = startGame;
+
   
 document.write('<h1>You guessed the number!</h1>');
 document.write('It took you ' + guessCount + ' tries to guess the number ' + randomNumber);
