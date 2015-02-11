@@ -15,9 +15,9 @@ do {
   if (parseInt(guess) === randomNumber) {
     correctGuess = true;
     }else if(parseInt(guess) > randomNumber){
-      document.write('<h1>GUESS LOWER!<h1>');
+      document.write('<p>GUESS LOWER!<p>');
     }else if(parseInt(guess) < randomNumber){
-      document.write('<h1>GUESS HIGHER!<h1>');
+      document.write('<p>GUESS HIGHER!<p>');
     } 
 } while ( ! correctGuess )
   
