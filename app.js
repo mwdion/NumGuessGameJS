@@ -1,9 +1,9 @@
-var scoresHolder = ???; //scores
-var gamePlayHolder= ???;//gameplay
-var newPlayerInput = ???; //new-player
-var addPlayerButton = ???;//first button
-var addUpperButton = ???;// second button
-var startGameButton = ???;//third button
+var scoresHolder = document.getElementById("scores"); //scores
+var gamePlayHolder= document.getElementById("gameplay");//gameplay
+var newPlayerInput = document.getElementById("new-player"); //new-player
+var addPlayerButton = document.getElementsByTagName("button")[0];//first button
+var addUpperButton = document.getElementsByTagName("button")[1];// second button
+var startGameButton = document.getElementsByTagName("button")[2];//third button
 
 
 //Add New Player
