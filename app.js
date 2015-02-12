@@ -1,10 +1,16 @@
 var scoresHolder = document.getElementById("scores"); //scores
 var gamePlayHolder= document.getElementById("gameplay");//gameplay
 var newPlayerInput = document.getElementById("new-player"); //new-player
-var upperInput = document.getElementById("upper"); //upper
 var addPlayerButton = document.getElementsByTagName("button")[0];//first button
-var addUpperButton = document.getElementsByTagName("button")[1];// second button
+var addUpperButton = document.getElementById("config");// config
 var startGameButton = document.getElementsByTagName("button")[2];//third button
+var rangeInput = document.querySelector('#config');
+
+rangeInput.addEventListener('click', function(e) {
+  var element = document.querySelector('#range-options');
+  var label = document.querySelector('#rangelabel');
+  label.innerHTML = element.value;
+});
 
 
 //Add New Player
@@ -13,14 +19,11 @@ var addNewPlayer = function(){
   // onclick Save player name to a variable
 }
 
-//New Upper Element
-var newUpperElement = function(){
-  //create new h2 element that should say "Your guessing range is from 0 to "Upper Element""
-}
 // Add Upper 
 var addUpper = function(){
   console.log("Add upper...");
-  var upper = createNewUpperElement(upperInput.value);
+  // var setRange = document.querySelector('#config');
+  // var upper = prompt("What is your upper limit number?");
   // onclick Save it to upper variable and print to screen.
 }
 // Get random number
@@ -34,7 +37,6 @@ function getRandomNumber( upper ) {
 var startGame = function(){
   console.log("Game Started!");
   // onclick prompt user to guess a number
-  var upper = prompt("What is your upper limit number?");
   var randomNumber = getRandomNumber(upper);
   var guess;
   var guessCount = 0;
@@ -56,7 +58,7 @@ var startGame = function(){
 }
 
 // set the click handler to the addUpper function
-addUpperButton.onclick = addUpper;
+// addUpperButton.onclick = addUpper;
 // set the click handler to the addPlayerButton
 addPlayerButton.onclick = addNewPlayer;
 //set the click handler to the startGameButton

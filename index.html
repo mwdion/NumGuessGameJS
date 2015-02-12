@@ -13,9 +13,15 @@
         <label for="new-player">Add Player Name</label><input class="form-control focusedInput" id="new-player" type ="text"><button type="button" class="btn btn-primary">Add</button>
       </p>
       <p>
-        <label for="upper">Select Range</label><input class="form-control focusedInput" id="upper" type ="text"><button type="button" class="btn btn-primary">Upper</button>
+        <label for="selectRange">Select Range</label>
+        <select class="form-control focused input" id="range-options">
+         <option value="10">0 to 10</option>
+         <option value="50">0 to 50</option>
+         <option value="100">0 to 100</option>
+        </select>
+        <button type="button" class= "btn btn-primary" id="config">Set Range</button>
+        <label id="rangelabel"></label>
       </p>
-      <h2>Your guessing range is from 0 to "Upper Number"</h2>
     <button type="button" class="btn btn-lg btn-success btn-block">Start</button>  
     <h3>GamePlay</h3>
       <ul id = "gameplay">

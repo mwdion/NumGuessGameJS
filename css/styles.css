@@ -21,7 +21,7 @@ input#new-player {
   width: 318px;
 }
 
-input#upper{
+select#range-options{
   width: 318px;
 }
 button#upper{
