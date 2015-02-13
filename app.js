@@ -1,10 +1,7 @@
 var scoresHolder = document.getElementById("scores"); //scores
 var gamePlayHolder= document.getElementById("gameplay");//gameplay
-// var newPlayerInput = document.getElementById("new-player"); //new-player
-// var addPlayerButton = document.getElementsByTagName("button")[0];//first button
 var addUpperButton = document.getElementById("config");// config
 var startGameButton = document.getElementsByTagName("button")[2];//third button
-// var randomNumber = getRandomNumber(upper);
 var element = document.querySelector('#range-options');
 var upper = element.value;
 
@@ -24,16 +21,9 @@ rangeInput.addEventListener('click', function(e) {
   var element = document.querySelector('#range-options');
   var label = document.querySelector('#rangelabel');
   label.innerHTML = element.value;
-  var upper = element.value;
+  upper = element.value;
   console.log(upper);
 });
-
-//Get Random number based of off selected range
-// function getRandomNumber( upper ) {
-//   var num = Math.floor(Math.random() * upper) + 1; 
-//   return num;
-//   console.log(num);
-//   }
 
  
 // Start Game
@@ -63,11 +53,14 @@ var startGame = function(){
         document.write('<p>GUESS HIGHER!<p>');
       } 
   } while ( ! correctGuess );
+  document.write('<h1>You guessed the number!</h1>');
+  document.write('It took you ' + guessCount + ' tries to guess the number ' + randomNumber);
+
+
   
   // if number is incorrect add li to Gameplay saying too high or too low based on guess.
   // if number is correct add li to scores with name and score.
 }
-
 // set the click handler to the addUpper function
 // addUpperButton.onclick = addUpper;
 // set the click handler to the addPlayerButton
@@ -90,6 +83,3 @@ for(var i=0; i < scoresHolder.children.length; i++){
 
 
   
-// document.write('<h1>You guessed the number!</h1>');
-// document.write('It took you ' + guessCount + ' tries to guess the number ' + randomNumber);
-
