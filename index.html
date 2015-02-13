@@ -10,14 +10,15 @@
   <div class ="container">
     <h1>Welcome to the Number Guessing Game</h1>
      <p>
-        <label for="new-player">Add Player Name</label><input class="form-control focusedInput" id="new-player" type ="text"><button type="button" class="btn btn-primary">Add</button>
+        <label for="new-player">Add Player Name</label><input class="form-control focusedInput" id="new-player" type ="text"><button type="button" class="btn btn-primary" id="player-btn">Add</button>
+        <label id="playerlabel"></label>
       </p>
       <p>
         <label for="selectRange">Select Range</label>
         <select class="form-control focused input" id="range-options">
-         <option value="10">0 to 10</option>
-         <option value="50">0 to 50</option>
-         <option value="100">0 to 100</option>
+         <option value=10>0 to 10</option>
+         <option value=50>0 to 50</option>
+         <option value=100>0 to 100</option>
         </select>
         <button type="button" class= "btn btn-primary" id="config">Set Range</button>
         <label id="rangelabel"></label>

@@ -1,46 +1,57 @@
 var scoresHolder = document.getElementById("scores"); //scores
 var gamePlayHolder= document.getElementById("gameplay");//gameplay
-var newPlayerInput = document.getElementById("new-player"); //new-player
-var addPlayerButton = document.getElementsByTagName("button")[0];//first button
+// var newPlayerInput = document.getElementById("new-player"); //new-player
+// var addPlayerButton = document.getElementsByTagName("button")[0];//first button
 var addUpperButton = document.getElementById("config");// config
 var startGameButton = document.getElementsByTagName("button")[2];//third button
-var rangeInput = document.querySelector('#config');
+// var randomNumber = getRandomNumber(upper);
+var element = document.querySelector('#range-options');
+var upper = element.value;
 
+//Add Player Name
+var addPlayerButton = document.querySelector('#player-btn');
+addPlayerButton.addEventListener('click', function(e){
+  var el = document.querySelector('#new-player');
+  var playerLabel = document.querySelector('#playerlabel');
+  playerlabel.innerHTML= el.value;
+  console.log(el.value);
+  el.value = " ";
+})
+
+// Set the range for the game
+var rangeInput = document.querySelector('#config');
 rangeInput.addEventListener('click', function(e) {
   var element = document.querySelector('#range-options');
   var label = document.querySelector('#rangelabel');
   label.innerHTML = element.value;
+  var upper = element.value;
+  console.log(upper);
 });
 
+//Get Random number based of off selected range
+// function getRandomNumber( upper ) {
+//   var num = Math.floor(Math.random() * upper) + 1; 
+//   return num;
+//   console.log(num);
+//   }
 
-//Add New Player
-var addNewPlayer = function(){
-  console.log("Add new player..");
-  // onclick Save player name to a variable
-}
-
-// Add Upper 
-var addUpper = function(){
-  console.log("Add upper...");
-  // var setRange = document.querySelector('#config');
-  // var upper = prompt("What is your upper limit number?");
-  // onclick Save it to upper variable and print to screen.
-}
-// Get random number
-function getRandomNumber( upper ) {
-  var num = Math.floor(Math.random() * upper) + 1; 
-  return num;
-}
-
-  
+ 
 // Start Game
 var startGame = function(){
   console.log("Game Started!");
-  // onclick prompt user to guess a number
-  var randomNumber = getRandomNumber(upper);
+  console.log(upper);
   var guess;
   var guessCount = 0;
   var correctGuess = false;
+  var randomNumber = getRandomNumber(upper);
+  console.log(randomNumber);
+  function getRandomNumber( upper ) {
+  var num = Math.floor(Math.random() * upper) + 1; 
+  return num;
+  console.log(num);
+  }
+  // onclick prompt user to guess a number
+  
   do {
     guess = prompt('I am thinking of a number between 1 and ' + upper + '. What is it?');
     guessCount += 1;
@@ -60,7 +71,7 @@ var startGame = function(){
 // set the click handler to the addUpper function
 // addUpperButton.onclick = addUpper;
 // set the click handler to the addPlayerButton
-addPlayerButton.onclick = addNewPlayer;
+// addPlayerButton.onclick = addNewPlayer;
 //set the click handler to the startGameButton
 startGameButton.onclick = startGame;
 
