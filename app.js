@@ -5,17 +5,18 @@ var startGameButton = document.getElementsByTagName("button")[2];//third button
 var element = document.querySelector('#range-options');
 var upper = element.value;
 var guessCount = 0;
+var playerName;
 
 
 
 //Add Player Name
 var addPlayerButton = document.querySelector('#player-btn');
 addPlayerButton.addEventListener('click', function(e){
-  var el = document.querySelector('#new-player');
+  playerName = document.querySelector('#new-player');
   var playerLabel = document.querySelector('#playerlabel');
-  playerlabel.innerHTML= el.value;
-  console.log(el.value);
-  el.value = " ";
+  playerlabel.innerHTML= playerName.value;
+  console.log(playerName.value);
+  // playerName.value = " ";
 });
 
 // Set the range for the game
@@ -60,7 +61,7 @@ var startGame = function(){
   var gameHint = document.querySelector('#gameplay');
   gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
   var score = document.querySelector('#scores');
-  score.innerHTML = guessCount;
+  score.innerHTML = playerName.value + " " + guessCount;
 };
 
 
