@@ -44,24 +44,25 @@ var startGame = function(){
     var num = Math.floor(Math.random() * upper) + 1; 
     return num;
   }
-  // if number is incorrect add li to Gameplay saying too high or too low based on guess.
   do{
     guess = prompt('I am thinking of a number between 1 and ' + upper + '. What is it?');
     guessCount += 1;
+    var gameHint = document.querySelector('#gameplay');
     if(parseInt(guess) === randomNumber){
     correctGuess = true;
     }else if (parseInt(guess) > randomNumber){
-        var gameHint = document.querySelector('#gameplay');
         gameHint.innerHTML = 'GUESS LOWER!';
       }else if(parseInt(guess) < randomNumber){
-        var gameHint = document.querySelector('#gameplay');
         gameHint.innerHTML = 'GUESS HIGHER!';
     } 
   } while (!correctGuess);
   var gameHint = document.querySelector('#gameplay');
   gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
-  var score = document.querySelector('#scores');
-  score.innerHTML = playerName.value + " " + guessCount;
+  var list = document.getElementById('scores');
+  var score = document.getElementById('entry').value;
+  var entry = document.createElement('li');
+  entry.appendChild(document.createTextNode(playerName.value + " " + guessCount));
+  list.appendChild(entry);
 };
 
 
