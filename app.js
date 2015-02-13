@@ -4,6 +4,9 @@ var addUpperButton = document.getElementById("config");// config
 var startGameButton = document.getElementsByTagName("button")[2];//third button
 var element = document.querySelector('#range-options');
 var upper = element.value;
+var guessCount = 0;
+
+
 
 //Add Player Name
 var addPlayerButton = document.querySelector('#player-btn');
@@ -32,7 +35,7 @@ var startGame = function(){
   console.log("Game Started!");
   console.log(upper);
   var guess;
-  var guessCount = 0;
+  guessCount = 0;
   var correctGuess = false;
   var randomNumber = getRandomNumber(upper);
   console.log(randomNumber);
@@ -56,7 +59,11 @@ var startGame = function(){
   } while (!correctGuess);
   var gameHint = document.querySelector('#gameplay');
   gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
+  var score = document.querySelector('#scores');
+  score.innerHTML = guessCount;
 };
+
+
 
 startGameButton.onclick = startGame;
 
