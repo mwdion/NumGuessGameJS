@@ -54,38 +54,11 @@ var startGame = function(){
         gameHint.innerHTML = 'GUESS HIGHER!';
     } 
   } while (!correctGuess);
+  var gameHint = document.querySelector('#gameplay');
+  gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
 };
-// set the click handler to the addUpper function
-// addUpperButton.onclick = addUpper;
-// set the click handler to the addPlayerButton
-// addPlayerButton.onclick = addNewPlayer;
-//set the click handler to the startGameButton
+
 startGameButton.onclick = startGame;
 
-// cycle over the gamePlayHolder ul list items
-// for(var i=0; i < gamePlayHolder.children.length; i++){
-//    //while gameplay is occuring new elements are being added here.
-// }
 
-// //cycle over the scores ol list items
-// for(var i=0; i < scoresHolder.children.length; i++){
-//   // list items are saved here after game play with name and score.
-//   }
 
-//   document.write('<h1>You guessed the number!</h1>');
-//   document.write('It took you ' + guessCount + ' tries to guess the number ' + randomNumber);
-// }
-
-// onclick prompt user to guess a number
-  
-  // do {
-  //   guess = prompt('I am thinking of a number between 1 and ' + upper + '. What is it?');
-  //   guessCount += 1;
-  //   if (parseInt(guess) === randomNumber) {
-  //     correctGuess = true;
-  //     }else if(parseInt(guess) > randomNumber){
-  //       document.write('<p>GUESS LOWER!<p>');
-  //     }else if(parseInt(guess) < randomNumber){
-  //       document.write('<p>GUESS HIGHER!<p>');
-  //     } 
-  // } while ( ! correctGuess );
