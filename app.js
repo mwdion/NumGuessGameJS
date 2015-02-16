@@ -11,6 +11,7 @@ var scoreArray = [];
 // add Gif Image
 function show_image(src, width, height, alt) {
     var img = document.createElement("img");
+    img.setAttribute("id", "GIF")
     img.src = src;
     img.width = width;
     img.height = height;
@@ -18,6 +19,12 @@ function show_image(src, width, height, alt) {
 
     // This next line will just add it to the <body> tag
     document.body.appendChild(img);
+}
+
+//Remove Gif
+var removeGif = function(){
+  var elem = document.getElementById("GIF");
+  elem.remove();
 }
 
 
@@ -44,6 +51,11 @@ rangeInput.addEventListener('click', function(e) {
 // Start Game
 var startGame = function(){
   document.getElementById("scores").innerHTML = "";
+  if(document.getElementById('GIF')!= undefined){
+    removeGif();
+  }else{
+    console.log("There is no Gif");
+  };
   console.log("Game Started!");
   console.log(upper);
   var guess;
