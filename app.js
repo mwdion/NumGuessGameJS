@@ -41,6 +41,20 @@ rangeInput.addEventListener('click', function(e) {
   console.log(upper);
 });
 
+// make leaderboard
+function makeLeaderboard(scoreArray){
+    var listContainer = document.createElement("div");
+    document.getElementsByTagName("body")[0].appendChild(listContainer);
+    var listElement = document.createElement("ol");
+    listContainer.appendChild(listElement);
+    var numberOfScores = scoreArray.length;
+    for( var i =  0 ; i < numberOfScores ; ++i){
+      var listItem = document.createElement("li");
+      listItem.innerHTML = scoreArray[i].name;
+      listElement.appendChild(listItem);
+    }
+  }
+
 
 // Start Game
 var startGame = function(){
@@ -74,6 +88,16 @@ var startGame = function(){
     score: guessCount,
   }
   scoreArray.push(player);
+  scoreArray.sort(function (a, b) {
+  if (a.score > b.score) {
+    return 1;
+  }
+  if (a.score < b.score) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+});
   console.log(scoreArray);
   if(guessCount <= 2){
     alert("You are a super GENIUS");
@@ -84,10 +108,13 @@ var startGame = function(){
   } else if (guessCount <= 15){
     alert("I don't think you should be playing this game!");
   }
+  makeLeaderboard(scoreArray);
+  
   var list = document.getElementById('scores');
   var entry = document.createElement('li');
   scores.appendChild(document.createTextNode("Player: " + playerName.value + " Score: " + guessCount));
   list.appendChild(entry);
+
 
   if (guessCount <= 2){
       show_image('http://www.reactiongifs.com/r/2013/11/FattyGenius.gif', 
