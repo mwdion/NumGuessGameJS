@@ -59,9 +59,9 @@ var startGame = function(){
   var gameHint = document.querySelector('#gameplay');
   gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
   var list = document.getElementById('scores');
-  var score = document.getElementById('entry').value;
+  // var score = document.getElementById('entry').value;
   var entry = document.createElement('li');
-  entry.appendChild(document.createTextNode(playerName.value + " " + guessCount));
+  scores.appendChild(document.createTextNode("Player: " +playerName.value + " Score: " + guessCount));
   list.appendChild(entry);
 };
 
