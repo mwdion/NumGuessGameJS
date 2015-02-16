@@ -43,6 +43,7 @@ rangeInput.addEventListener('click', function(e) {
 
 // Start Game
 var startGame = function(){
+  document.getElementById("scores").innerHTML = "";
   console.log("Game Started!");
   console.log(upper);
   var guess;
@@ -97,7 +98,7 @@ var startGame = function(){
   var list = document.getElementById('scores');
   var numberOfScores = scoreArray.length;
   for( var i =  0 ; i < numberOfScores ; ++i){
-    var entry = document.createElement('li');
+    entry = document.createElement('li');
     entry.innerHTML = "Player: " + scoreArray[i].name + " Score: " + scoreArray[i].score;
     list.appendChild(entry);
   }
