@@ -6,7 +6,7 @@ var element = document.querySelector('#range-options');
 var upper = element.value;
 var guessCount = 0;
 var playerName;
-var infoArray = [];
+var infoArray =[];
 var scoreArray = [];
 
 
@@ -67,8 +67,16 @@ var startGame = function(){
   scoreArray.push(infoArray);
   // scoreArray.sort(function(a, b){return a-b});
   console.log(scoreArray);
+  if(guessCount <= 2){
+    alert("You are a super GENIUS");
+  } else if(guessCount <=5){
+    alert("You are a smart fellow!");
+  } else if (guessCount <= 10){
+    alert("Keep practicing!");
+  } else if (guessCount <= 15){
+    alert("I don't think you should be playing this game!");
+  }
   var list = document.getElementById('scores');
-  // var score = document.getElementById('entry').value;
   var entry = document.createElement('li');
   scores.appendChild(document.createTextNode("Player: " + playerName.value + " Score: " + guessCount));
   list.appendChild(entry);
