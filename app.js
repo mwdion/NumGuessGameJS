@@ -6,9 +6,19 @@ var element = document.querySelector('#range-options');
 var upper = element.value;
 var guessCount = 0;
 var playerName;
-var infoArray =[];
 var scoreArray = [];
-var images_array = ["FattyGenius.gif"];
+
+// add Gif Image
+function show_image(src, width, height, alt) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+
+    // This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+}
 
 
 //Add Player Name
@@ -30,7 +40,6 @@ rangeInput.addEventListener('click', function(e) {
   upper = element.value;
   console.log(upper);
 });
-
 
 
 // Start Game
@@ -60,12 +69,11 @@ var startGame = function(){
   } while (!correctGuess);
   var gameHint = document.querySelector('#gameplay');
   gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
-  infoArray.push(guessCount, playerName.value);
-  // for(var i = 0; i < infoArray.length; i++){
-  //   scoreArray.push(infoArray[i]);
-  // }
-  scoreArray.push(infoArray);
-  // scoreArray.sort(function(a, b){return a-b});
+  var player = {
+    name: playerName.value,
+    score: guessCount,
+  }
+  scoreArray.push(player);
   console.log(scoreArray);
   if(guessCount <= 2){
     alert("You are a super GENIUS");
@@ -80,18 +88,9 @@ var startGame = function(){
   var entry = document.createElement('li');
   scores.appendChild(document.createTextNode("Player: " + playerName.value + " Score: " + guessCount));
   list.appendChild(entry);
-  function show_image(src, width, height, alt) {
-    var img = document.createElement("img");
-    img.src = src;
-    img.width = width;
-    img.height = height;
-    img.alt = alt;
 
-    // This next line will just add it to the <body> tag
-    document.body.appendChild(img);
-}
   if (guessCount <= 2){
-    show_image('http://www.reactiongifs.com/r/2013/11/FattyGenius.gif', 
+      show_image('http://www.reactiongifs.com/r/2013/11/FattyGenius.gif', 
                  276, 
                  110, 
                  'FattyGenius');
