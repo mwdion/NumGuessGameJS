@@ -6,6 +6,8 @@ var element = document.querySelector('#range-options');
 var upper = element.value;
 var guessCount = 0;
 var playerName;
+var infoArray = [];
+var scoreArray = [];
 
 
 
@@ -58,10 +60,17 @@ var startGame = function(){
   } while (!correctGuess);
   var gameHint = document.querySelector('#gameplay');
   gameHint.innerHTML = 'You win!  It took you ' + guessCount + ' tries to guess the number ' + randomNumber;
+  infoArray.push(guessCount, playerName.value);
+  // for(var i = 0; i < infoArray.length; i++){
+  //   scoreArray.push(infoArray[i]);
+  // }
+  scoreArray.push(infoArray);
+  // scoreArray.sort(function(a, b){return a-b});
+  console.log(scoreArray);
   var list = document.getElementById('scores');
   // var score = document.getElementById('entry').value;
   var entry = document.createElement('li');
-  scores.appendChild(document.createTextNode("Player: " +playerName.value + " Score: " + guessCount));
+  scores.appendChild(document.createTextNode("Player: " + playerName.value + " Score: " + guessCount));
   list.appendChild(entry);
 };
 
