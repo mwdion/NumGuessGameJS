@@ -8,7 +8,7 @@ var guessCount = 0;
 var playerName;
 var infoArray =[];
 var scoreArray = [];
-
+var images_array = ["FattyGenius.gif"];
 
 
 //Add Player Name
@@ -80,6 +80,38 @@ var startGame = function(){
   var entry = document.createElement('li');
   scores.appendChild(document.createTextNode("Player: " + playerName.value + " Score: " + guessCount));
   list.appendChild(entry);
+  function show_image(src, width, height, alt) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+
+    // This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+}
+  if (guessCount <= 2){
+    show_image('http://www.reactiongifs.com/r/2013/11/FattyGenius.gif', 
+                 276, 
+                 110, 
+                 'FattyGenius');
+  }else if (guessCount <= 5){
+    show_image('http://stream1.gifsoup.com/view/20259/smart-guy-o.gif', 
+                 276, 
+                 110, 
+                 'SmartGuy');
+  }else if (guessCount <= 10){
+    show_image('http://media.giphy.com/media/QMMt03hAmVbNu/giphy.gif', 
+                 276, 
+                 110, 
+                 'TryAgainCat');
+  }else if (guessCount <= 15){
+    show_image('http://www.reactiongifs.com/wp-content/uploads/2013/08/faceplant.gif', 
+                 276, 
+                 110, 
+                 'FacePlant');
+
+  }
 };
 
 

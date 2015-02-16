@@ -27,3 +27,8 @@ select#range-options{
 button#upper{
   display: inline;
 }
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
