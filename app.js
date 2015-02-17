@@ -137,6 +137,8 @@ var startGame = function(){
                  'FacePlant');
 
   }
+  var delay = document.getElementById("GIF");
+  delay = window.setTimeout(removeGif, 5000);
 };
 
 
